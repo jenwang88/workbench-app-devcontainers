@@ -1,17 +1,12 @@
 services:
   app:
     container_name: "application-server"
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: "jupyter/scipy-notebook"
     restart: always
     volumes:
       - .:/workspace:cached
-      - jupyter-data:/root/.jupyter
     ports:
       - "8888:8888"
-    environment:
-      - JUPYTER_ENABLE_LAB=yes
     networks:
       - app-network
     cap_add:
@@ -20,10 +15,6 @@ services:
       - /dev/fuse
     security_opt:
       - apparmor:unconfined
-    command: sleep infinity
-
-volumes:
-  jupyter-data:
 
 networks:
   app-network:

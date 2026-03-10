@@ -4,12 +4,25 @@
   "service": "app",
   "shutdownAction": "none",
   "workspaceFolder": "/workspace",
-  "postCreateCommand": "cp /workspace/Sample_Lab_Report.ipynb ~/Sample_Lab_Report.ipynb || true",
+  "postCreateCommand": [
+    "bash",
+    "-c",
+    "./startupscript/post-startup.sh jovyan /home/jovyan ${templateOption:cloud} ${templateOption:login} && cp /workspace/Sample_Lab_Report.ipynb /home/jovyan/Sample_Lab_Report.ipynb || true"
+  ],
+  "postStartCommand": [
+    "./startupscript/remount-on-restart.sh",
+    "jovyan",
+    "/home/jovyan",
+    "${templateOption:cloud}",
+    "${templateOption:login}"
+  ],
   "remoteUser": "root",
   "features": {
-    "ghcr.io/devcontainers/features/python:1": {
-      "version": "3.11"
-    }
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "17"
+    },
+    "ghcr.io/devcontainers/features/aws-cli:1": {},
+    "ghcr.io/dhoeric/features/google-cloud-cli:1": {}
   },
   "customizations": {
     "workbench": {

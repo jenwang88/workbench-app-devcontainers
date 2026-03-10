@@ -5,7 +5,7 @@
   "shutdownAction": "none",
   "workspaceFolder": "/workspace",
   "postCreateCommand": [
-    "./startup-wrapper.sh",
+    "./startupscript/post-startup.sh",
     "jovyan",
     "/home/jovyan",
     "${templateOption:cloud}",

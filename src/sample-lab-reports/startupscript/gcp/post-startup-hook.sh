@@ -22,3 +22,11 @@ if [[ "$ACCOUNT" != "(unset)" && -n "$ACCOUNT" ]]; then
 else
   echo "gcloud is not logged in. Skipping region configuration."
 fi
+
+# Copy notebook to user's home directory
+NOTEBOOK_SRC="/workspace/Sample_Lab_Report.ipynb"
+NOTEBOOK_DEST="${WORK_DIRECTORY}/Sample_Lab_Report.ipynb"
+
+if [ -f "$NOTEBOOK_SRC" ]; then
+  ${RUN_AS_LOGIN_USER} "cp '$NOTEBOOK_SRC' '$NOTEBOOK_DEST' || true"
+fi

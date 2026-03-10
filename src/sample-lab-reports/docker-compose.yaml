@@ -5,8 +5,9 @@ services:
     restart: always
     volumes:
       - .:/workspace:cached
+      - work:/home/jovyan/work
     ports:
-      - "8888:8888"
+      - 8888:8888
     networks:
       - app-network
     cap_add:
@@ -15,6 +16,9 @@ services:
       - /dev/fuse
     security_opt:
       - apparmor:unconfined
+
+volumes:
+  work:
 
 networks:
   app-network:

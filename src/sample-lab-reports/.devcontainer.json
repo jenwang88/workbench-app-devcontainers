@@ -25,18 +25,5 @@
     },
     "ghcr.io/devcontainers/features/aws-cli:1": {},
     "ghcr.io/dhoeric/features/google-cloud-cli:1": {}
-  },
-  "customizations": {
-    "workbench": {
-      "opens": {
-        "extensions": [
-          ".ipynb",
-          ".py",
-          ".md"
-        ],
-        "fileUrlSuffix": "/lab/tree/{path}",
-        "folderUrlSuffix": "/lab/tree/{path}"
-      }
-    }
   }
 }

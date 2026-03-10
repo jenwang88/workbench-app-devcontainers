@@ -1,0 +1,10 @@
+{
+  "id": "sample-lab-reports",
+  "version": "1.0.0",
+  "name": "Sample Lab Reports",
+  "description": "A JupyterLab app that generates synthetic lab data and produces basic reports with distribution analysis, null percentages, and min/max statistics.",
+  "documentationURL": "https://github.com/verily-src/workbench-app-devcontainers/tree/master/src/sample-lab-reports",
+  "licenseURL": "https://github.com/verily-src/workbench-app-devcontainers/blob/master/LICENSE",
+  "options": {},
+  "platforms": ["Any"]
+}

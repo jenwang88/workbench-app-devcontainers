@@ -1,0 +1,27 @@
+{
+  "name": "Sample Lab Reports",
+  "dockerComposeFile": "docker-compose.yaml",
+  "service": "app",
+  "shutdownAction": "none",
+  "workspaceFolder": "/workspace",
+  "postCreateCommand": "cp /workspace/Sample_Lab_Report.ipynb ~/Sample_Lab_Report.ipynb || true",
+  "remoteUser": "root",
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    }
+  },
+  "customizations": {
+    "workbench": {
+      "opens": {
+        "extensions": [
+          ".ipynb",
+          ".py",
+          ".md"
+        ],
+        "fileUrlSuffix": "/lab/tree/{path}",
+        "folderUrlSuffix": "/lab/tree/{path}"
+      }
+    }
+  }
+}

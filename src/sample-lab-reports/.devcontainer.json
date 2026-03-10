@@ -5,9 +5,11 @@
   "shutdownAction": "none",
   "workspaceFolder": "/workspace",
   "postCreateCommand": [
-    "bash",
-    "-c",
-    "./startupscript/post-startup.sh jovyan /home/jovyan ${templateOption:cloud} ${templateOption:login} && cp /workspace/Sample_Lab_Report.ipynb /home/jovyan/Sample_Lab_Report.ipynb || true"
+    "./startup-wrapper.sh",
+    "jovyan",
+    "/home/jovyan",
+    "${templateOption:cloud}",
+    "${templateOption:login}"
   ],
   "postStartCommand": [
     "./startupscript/remount-on-restart.sh",

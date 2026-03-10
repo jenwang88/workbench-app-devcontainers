@@ -1,7 +1,7 @@
 services:
   app:
     container_name: "application-server"
-    image: "jupyter/scipy-notebook"
+    image: "quay.io/jupyter/base-notebook"
     restart: always
     volumes:
       - .:/workspace:cached
